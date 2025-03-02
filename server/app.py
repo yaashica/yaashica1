@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
+from flask_cors import CORS
 
-# Define file paths (Ensure these paths are correct)
-model_path = r"C:\Users\yaash\OneDrive\LIL\Desktop\iot_ro_water\water_quality_model (1).pkl"
-scaler_path = r"C:\Users\yaash\OneDrive\LIL\Desktop\iot_ro_water\scaler (1).pkl"
+# Define file paths
+model_path = "../water_quality_model.pkl"
+scaler_path = "../scaler.pkl"
 
 # Load the trained model and scaler
 try:
@@ -16,6 +17,8 @@ except Exception as e:
 
 # Initialize Flask app
 app = Flask(__name__)
+
+CORS(app, supports_credentials=True)
 
 @app.route("/", methods=["GET"])
 def home():
@@ -37,7 +40,7 @@ def predict():
         prediction = model.predict(features_scaled)
 
         # Return prediction as JSON response
-        return jsonify({"prediction": prediction.tolist()})
+        return jsonify({"prediction": prediction.tolist()[0]})
 
     except Exception as e:
         return jsonify({"error": str(e)})

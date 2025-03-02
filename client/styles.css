@@ -1,0 +1,133 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    margin: 0;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    width: 90%;
+    max-width: 900px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    gap: 20px;
+    flex-wrap: nowrap;
+
+    width: 100%;
+}
+
+.input-card {
+    background: rgba(255, 255, 255, 0.15);
+    width: 200px;
+    height: 120px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-card:hover {
+    transform: scale(1.05);
+}
+
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 80%;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    outline: none;
+    text-align: center;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:active {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, #ff5c9a, #ff3b6d);
+}
+
+.output-card {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    width: 350px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.output-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.potable {
+    background: rgba(46, 204, 113, 0.3);
+    color: #2ecc71;
+}
+
+.not-potable {
+    background: rgba(231, 76, 60, 0.3);
+    color: #e74c3c;
+}
