@@ -4,8 +4,8 @@ import numpy as np
 from flask_cors import CORS
 
 # Define file paths
-model_path = "../water_quality_model.pkl"
-scaler_path = "../scaler.pkl"
+model_path = "./water_quality_model.pkl"
+scaler_path = "./scaler.pkl"
 
 # Load the trained model and scaler
 try:
